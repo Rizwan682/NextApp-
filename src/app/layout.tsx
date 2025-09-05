@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
+<<<<<<< HEAD
 import { twMerge } from "tailwind-merge";
+=======
+import clsx from "clsx";
+// import { twMerge } from "tailwind-merge";
+>>>>>>> temp-fix
 
 const dmSans = DM_Sans({ subsets: ["latin"] });
 

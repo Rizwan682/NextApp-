@@ -6,6 +6,7 @@ import { Pricing } from "@/sections/Pricing";
 import { Testimonials } from "@/sections/Testimonials";
 import { CallToAction } from "@/sections/CallToAction";
 import { Footer } from "@/sections/Footer";
+<<<<<<< HEAD
 
 export default function Home() {
   return (
@@ -20,4 +21,17 @@ export default function Home() {
       <Footer />
     </>
   );
+=======
+export default function Home() {
+  return <>
+  <Header/>
+  <Hero/>
+  <LogoTicker/>
+  <ProductShowcase/>
+  <Pricing/>
+  <Testimonials/>
+  <CallToAction/>
+  <Footer/>
+  </>;
+>>>>>>> temp-fix
 }
