@@ -74,50 +74,50 @@ const firstColumn = testimonials.slice(0,3);
 const secondColumn = testimonials.slice(3,6);
 const thirdColumn = testimonials.slice(6,9);
 
-const TestimonialsColumn =(props: { className?: string; testimonials: typeof testimonials;
-  duration?: number
+const TestimonialsColumn = (props: {
+  className?: string;
+  testimonials: typeof testimonials;
+  duration?: number;
 }) => (
-   <div className={props.className}>
-    <motion.div animate={{
-      translateY: "-50%",
-      
-    }}
-    transition={{
-      repeat: Infinity,
-      duration: props.duration || 10 ,
-      ease:"linear",
-      repeatType: "loop",
-    }}
-    className="flex flex-col gap-6 pb-6 -translate-y-1/2 "
+  <div className={props.className}>
+    <motion.div
+      animate={{
+        translateY: "-50%",
+      }}
+      transition={{
+        repeat: Infinity,
+        duration: props.duration || 10,
+        ease: "linear",
+        repeatType: "loop",
+      }}
+      className="flex flex-col gap-6 pb-6 -translate-y-1/2"
     >
-         {[...new Array(2)].fill(0).map((_,index) =>(
-          <React.Fragment key={index} > 
-          {props.testimonials.map(({text,imageSrc,name,username}) => (
-            <div className="card">
+      {[...new Array(2)].fill(0).map((_, index) => (
+        <React.Fragment key={index}>
+          {props.testimonials.map(({ text, imageSrc, name, username }) => (
+            <div className="card" key={username}> {/* ✅ FIXED */}
               <div>{text}</div>
               <div className="flex items-center gap-2 mt-5">
-              <Image
-              src={imageSrc} 
-                alt={name} 
-                width={40}
-                height={40}
-                className="h-10 w-10 rounded-full"
-              />
-              <div className="flex flex-col">
-                <div className="font-medium tracking-tight leading-5">{name}</div>
-                <div className="leading-5 tracking-light">{username}</div>
-              </div>
+                <Image
+                  src={imageSrc}
+                  alt={name}
+                  width={40}
+                  height={40}
+                  className="h-10 w-10 rounded-full"
+                />
+                <div className="flex flex-col">
+                  <div className="font-medium tracking-tight leading-5">{name}</div>
+                  <div className="leading-5 tracking-light">{username}</div>
+                </div>
               </div>
             </div>
           ))}
-          
-          </React.Fragment>
-         ))}
-          
-        </motion.div>
-        </div>
+        </React.Fragment>
+      ))}
+    </motion.div>
+  </div>
+);
 
-)
 
 export const Testimonials = () => {
   return(
